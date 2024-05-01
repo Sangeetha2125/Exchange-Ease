@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LatestRates extends StatelessWidget {
   final List<dynamic> exchangeRates;
@@ -63,19 +64,21 @@ class LatestRates extends StatelessWidget {
                                   CircleAvatar(
                                     radius: 16,
                                     backgroundColor:
-                                        const Color.fromARGB(255, 124, 8, 0),
+                                        const Color.fromARGB(255, 8, 0, 101),
                                     child: Text(
                                       exchangeRates[index]["symbol"].toString(),
                                       style: const TextStyle(
-                                        fontSize: 11,
+                                        fontSize: 10,
                                       ),
                                     ),
                                   ),
                                   const SizedBox(width: 8),
-                                  Text(
-                                    exchangeRates[index]["name"].toString(),
-                                    style: const TextStyle(
-                                      fontSize: 16,
+                                  Flexible(
+                                    child: Text(
+                                      exchangeRates[index]["name"].toString(),
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -135,7 +138,7 @@ class LatestRates extends StatelessWidget {
                                             fontSize: 12,
                                           ),
                                           padding: const EdgeInsets.symmetric(
-                                            horizontal: 7,
+                                            horizontal: 10,
                                             vertical: 4,
                                           ),
                                           shape: RoundedRectangleBorder(

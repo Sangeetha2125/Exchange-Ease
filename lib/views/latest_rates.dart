@@ -120,31 +120,33 @@ class LatestRates extends StatelessWidget {
                                       height: 5,
                                     )
                                   : const SizedBox(),
-                              Wrap(
-                                runSpacing: 0,
-                                spacing: 8,
-                                children:
-                                    (exchangeRates[index]["countries"] as List)
-                                        .map((country) {
-                                  return Chip(
-                                    label: Text(
-                                      country.toString(),
-                                    ),
-                                    labelStyle: const TextStyle(
-                                      fontSize: 12,
-                                    ),
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 7,
-                                      vertical: 4,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(
-                                        16,
-                                      ),
-                                    ),
-                                  );
-                                }).toList(),
-                              )
+                              exchangeRates[index]["countries"].length > 1
+                                  ? Wrap(
+                                      runSpacing: 0,
+                                      spacing: 8,
+                                      children: (exchangeRates[index]
+                                              ["countries"] as List)
+                                          .map((country) {
+                                        return Chip(
+                                          label: Text(
+                                            country.toString(),
+                                          ),
+                                          labelStyle: const TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 7,
+                                            vertical: 4,
+                                          ),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                              16,
+                                            ),
+                                          ),
+                                        );
+                                      }).toList(),
+                                    )
+                                  : const SizedBox(),
                             ],
                           ),
                         ),

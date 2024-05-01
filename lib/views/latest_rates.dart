@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LatestRates extends StatelessWidget {
   final List<dynamic> exchangeRates;
@@ -63,16 +62,21 @@ class LatestRates extends StatelessWidget {
                                 children: [
                                   CircleAvatar(
                                     radius: 16,
-                                    backgroundColor:
-                                        const Color.fromARGB(255, 8, 0, 101),
-                                    child: Text(
-                                      exchangeRates[index]["symbol"].toString(),
-                                      style: const TextStyle(
-                                        fontSize: 10,
+                                    backgroundColor: Colors.white,
+                                    child: CircleAvatar(
+                                      radius: 15,
+                                      backgroundColor:
+                                          Theme.of(context).cardColor,
+                                      child: Text(
+                                        exchangeRates[index]["symbol"]
+                                            .toString(),
+                                        style: const TextStyle(
+                                          fontSize: 9,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(width: 8),
+                                  const SizedBox(width: 10),
                                   Flexible(
                                     child: Text(
                                       exchangeRates[index]["name"].toString(),
